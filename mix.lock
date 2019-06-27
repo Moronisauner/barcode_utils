@@ -1,0 +1,3 @@
+%{
+  "payments_barcode": {:git, "https://github.com/bamorim/payments_barcode.git", "9a4eb5beaa0c8a7179bbf397d4cf4d9fb7a5b1d2", []},
+}
