@@ -1,10 +1,20 @@
 defmodule Scripts do
   alias PaymentsBarcode.{Boleto, GDA}
 
-  @bank_codes ["197", "033", "237", "473"]
+  @bank_codes [
+    # Stone Pagamentos
+    "197",
+    # Banco Santander (Brasil) S.A.
+    "033",
+    # Banco Bradesco S.A.
+    "237",
+    # Banco Caixa Geral - Brasil S.A.
+    "473",
+    # Itaú Unibanco S.A.
+    "341"
+  ]
 
   @spec gerar_boleto(Integer.t(), String.t() | nil) :: Boleto.t()
-
   def gerar_boleto(value \\ 100, due_date \\ nil) do
     %Boleto{
       bank_code: Enum.random(@bank_codes),
