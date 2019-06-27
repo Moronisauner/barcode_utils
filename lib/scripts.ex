@@ -68,6 +68,11 @@ defmodule Scripts do
     end)
   end
 
+  @spec consultar_barcode(String.t()) :: Boleto.t() | GDA.t() | :error
+  def consultar_barcode(barcode) do
+    PaymentsBarcode.from_barcode(barcode)
+  end
+
   defp random_free_field do
     1_000_000_000_000_000_000_000_000..9_999_999_999_999_999_999_999_999
     |> Enum.random()
